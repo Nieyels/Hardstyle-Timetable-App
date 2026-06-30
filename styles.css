@@ -410,6 +410,14 @@ body.is-header-compact .controls {
   animation-delay: 230ms;
 }
 
+.home-shell .festival-card:nth-child(4) {
+  animation-delay: 290ms;
+}
+
+.home-shell .festival-card:nth-child(5) {
+  animation-delay: 350ms;
+}
+
 .festival-card__link {
   min-height: 260px;
   width: 100%;
