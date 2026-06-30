@@ -1529,7 +1529,7 @@ input[type="search"]:focus-visible {
 
 .current-time-marker {
   position: absolute;
-  z-index: 14;
+  z-index: 5;
   pointer-events: none;
 }
 
@@ -1650,7 +1650,7 @@ input[type="search"]:focus-visible {
 .horizontal-stage-label {
   position: sticky;
   left: 0;
-  z-index: 7;
+  z-index: 10;
   height: 96px;
   display: grid;
   align-content: end;
