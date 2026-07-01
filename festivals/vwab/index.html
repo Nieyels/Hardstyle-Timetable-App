@@ -3,41 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Choose a hardstyle festival and build your personal timetable with favorites, account sync and party sharing.">
+  <meta name="description" content="Plan your VWAB timetable with stage filters, personal schedule, favorites and party sharing.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a0a0a">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Hardstyle Timetable">
+  <meta name="apple-mobile-web-app-title" content="VWAB">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Hardstyle Timetable App | Festivals</title>
-  <link rel="canonical" href="https://hardstyle-timetable.apps.dj/">
+  <title>VWAB Timetable | Hardstyle Timetable App</title>
+  <link rel="canonical" href="https://hardstyle-timetable.apps.dj/festivals/vwab/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hardstyle Timetable App">
-  <meta property="og:title" content="Hardstyle Timetable App">
-  <meta property="og:description" content="Choose a festival and build your personal timetable.">
-  <meta property="og:url" content="https://hardstyle-timetable.apps.dj/">
+  <meta property="og:title" content="VWAB Timetable">
+  <meta property="og:description" content="Build your personal VWAB timetable, mark must-see sets and compare schedules with your party.">
+  <meta property="og:url" content="https://hardstyle-timetable.apps.dj/festivals/vwab/">
   <meta property="og:image" content="https://hardstyle-timetable.apps.dj/favicon.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Hardstyle Timetable App">
-  <meta name="twitter:description" content="Choose a festival and build your personal timetable.">
+  <meta name="twitter:title" content="VWAB Timetable">
+  <meta name="twitter:description" content="Build your personal VWAB timetable, mark must-see sets and compare schedules with your party.">
   <meta name="twitter:image" content="https://hardstyle-timetable.apps.dj/favicon.png">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="apple-touch-icon" href="../../favicon.png">
+  <link rel="manifest" href="../../site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=103">
+  <link rel="stylesheet" href="../../styles.css?v=103">
 </head>
 <body>
-  <div class="app-shell home-shell">
-    <header class="hero home-hero">
+  <div class="app-shell">
+    <header class="hero">
       <div class="hero__content">
-        <p class="kicker">Hardstyle Timetable App</p>
-        <h1>Festivals</h1>
-        <p class="subtitle">Choose a festival and build your personal timetable.</p>
+        <p id="heroKicker" class="kicker">Timetable - 11 July 2026</p>
+        <h1 id="heroTitle">VWAB</h1>
+        <p id="heroSubtitle" class="subtitle">Tap sets you want to see and use the star to mark the ones you definitely do not want to miss.</p>
       </div>
+      <div id="heroCompactTitle" class="hero__compact-title" aria-hidden="true">VWAB - TIMETABLE</div>
       <div class="hero-actions">
+        <a class="hero-home-link" href="../../">All festivals</a>
         <button id="accountButton" class="hero-account" type="button" aria-haspopup="dialog" aria-controls="accountDialog">
           <span id="accountAvatar" class="hero-account__avatar" aria-hidden="true">T</span>
           <span class="hero-account__text">Account</span>
@@ -46,70 +48,61 @@
     </header>
 
     <main>
-      <section class="home-intro" aria-labelledby="festivalListTitle">
-        <p class="home-eyebrow">All timetables</p>
-        <h2 id="festivalListTitle">Choose your festival</h2>
-        <div class="festival-grid">
-          <article class="festival-card" style="--festival-banner: url('festivals/supremacy/banner.jpg')">
-            <a class="festival-card__link" href="festivals/supremacy/">
-              <span class="festival-card__status">Line-up available</span>
-              <strong>Supremacy</strong>
-              <span class="festival-card__meta">State of Distortion</span>
-              <span class="festival-card__meta">'s-Hertogenbosch, Netherlands</span>
-              <span class="festival-card__meta">26 September 2026</span>
-            </a>
-          </article>
-          <article class="festival-card" style="--festival-banner: url('festivals/decibel-outdoor/banner.jpg')">
-            <a class="festival-card__link" href="festivals/decibel-outdoor/">
-              <span class="festival-card__status">Line-up available</span>
-              <strong>Decibel Outdoor</strong>
-              <span class="festival-card__meta">Natures Rhythm</span>
-              <span class="festival-card__meta">Hilvarenbeek, Netherlands</span>
-              <span class="festival-card__meta">28 - 30 August 2026</span>
-            </a>
-          </article>
-          <article class="festival-card" style="--festival-banner: url('festivals/dominator/banner.jpg')">
-            <a class="festival-card__link" href="festivals/dominator/">
-              <span class="festival-card__status">Timetable available</span>
-              <strong>Dominator</strong>
-              <span class="festival-card__meta">Fatal Fortune</span>
-              <span class="festival-card__meta">Eersel, Netherlands</span>
-              <span class="festival-card__meta">17 - 18 July 2026</span>
-            </a>
-          </article>
-          <article class="festival-card" style="--festival-banner: url('festivals/vwab/banner.jpg')">
-            <a class="festival-card__link" href="festivals/vwab/">
-              <span class="festival-card__status">Timetable available</span>
-              <strong>VWAB</strong>
-              <span class="festival-card__meta">The Classics Cup</span>
-              <span class="festival-card__meta">Rosmalen, Netherlands</span>
-              <span class="festival-card__meta">11 July 2026</span>
-            </a>
-          </article>
-          <article class="festival-card" style="--festival-banner: url('festivals/defqon-1/banner.jpg')">
-            <a class="festival-card__link" href="festivals/defqon-1/">
-              <span class="festival-card__status">Cancelled</span>
-              <strong>Defqon.1</strong>
-              <span class="festival-card__meta">Sacred Oath</span>
-              <span class="festival-card__meta">Biddinghuizen, Netherlands</span>
-              <span class="festival-card__meta">25 - 28 June 2026</span>
-            </a>
-          </article>
-          <article class="festival-card" style="--festival-banner: url('festivals/intents-festival/banner.jpg')">
-            <a class="festival-card__link" href="festivals/intents-festival/">
-              <span class="festival-card__status">Past edition</span>
-              <strong>Intents Festival</strong>
-              <span class="festival-card__meta">Rise of Titans</span>
-              <span class="festival-card__meta">Oisterwijk, Netherlands</span>
-              <span class="festival-card__meta">5 - 7 June 2026</span>
-            </a>
-          </article>
+      <section class="controls" aria-label="Filters">
+        <div class="filters-primary">
+          <div class="control-group">
+            <label for="daySelect">Day</label>
+            <select id="daySelect"></select>
+          </div>
+          <label class="toggle">
+            <input id="showFavoritesOnly" type="checkbox">
+            <span>My timetable only</span>
+          </label>
         </div>
+
+        <button id="moreFiltersToggle" class="more-filters-toggle" type="button" aria-expanded="false" aria-controls="advancedFilters">
+          <span>More filters</span>
+          <span aria-hidden="true">&#9662;</span>
+        </button>
+
+        <div id="advancedFilters" class="filters-advanced" hidden>
+          <div class="control-group">
+            <label for="stageSelect">Stage</label>
+            <select id="stageSelect">
+              <option value="all">All stages</option>
+            </select>
+          </div>
+          <div class="control-group view-control">
+            <span class="control-label">View</span>
+            <div class="view-toggle" role="group" aria-label="View">
+              <button class="view-toggle__button is-active" type="button" data-view-mode="horizontal">Time horizontal</button>
+              <button class="view-toggle__button" type="button" data-view-mode="vertical">Time vertical</button>
+            </div>
+          </div>
+          <div class="control-group search-control">
+            <label for="searchInput">Search</label>
+            <input id="searchInput" type="search" autocomplete="off" placeholder="Search act, stage or day">
+          </div>
+        </div>
+      </section>
+
+      <section class="layout">
+        <section class="timetable-panel" aria-label="Timetable">
+          <div id="dayTitle" class="section-title"></div>
+          <div class="timeline-scroll" tabindex="0">
+            <div id="timeline" class="timeline"></div>
+          </div>
+        </section>
+
+        <aside class="personal-panel" aria-label="Personal timetable">
+          <div class="section-title">My timetable</div>
+          <div id="personalList" class="personal-list"></div>
+        </aside>
       </section>
     </main>
 
     <footer class="app-footer">
-      <p class="fan-disclaimer">Unofficial fan-made project. Festival pages are not affiliated with or endorsed by their organizers.</p>
+      <p class="fan-disclaimer" data-festival-disclaimer>Unofficial fan-made project. Not affiliated with or endorsed by VWAB or its organizers.</p>
       <button id="privacyButton" class="privacy-link" type="button" aria-haspopup="dialog" aria-controls="privacyDialog" aria-expanded="false">
         Privacy
       </button>
@@ -121,7 +114,7 @@
     <form id="accountForm" class="account-panel" autocomplete="on">
       <div class="account-dialog__header">
         <div>
-          <p class="account-dialog__eyebrow" data-festival-sync-label>Hardstyle Timetable sync</p>
+          <p class="account-dialog__eyebrow" data-festival-sync-label>VWAB sync</p>
           <h2 id="accountDialogTitle">Account</h2>
         </div>
         <button id="accountDialogClose" class="account-dialog__close" type="button" aria-label="Close">x</button>
@@ -238,7 +231,7 @@
         <section>
           <h3>Retention</h3>
           <p>Local timetable selections remain on your device until you clear browser data. Account data is retained while your account is active or as long as needed to provide the service.</p>
-          <p>You can permanently delete your account through <strong>Account - Delete account</strong>. This removes your account, profile, synchronized timetable data, party membership and stored profile picture. This action cannot be undone.</p>
+          <p>You can permanently delete your account through <strong>Account -> Delete account</strong>. This removes your account, profile, synchronized timetable data, party membership and stored profile picture. This action cannot be undone.</p>
           <p>You may request access, correction, deletion, restriction or portability of your personal data through the privacy contact above. You may also object to processing or submit a complaint to your national data-protection authority.</p>
         </section>
 
@@ -256,23 +249,31 @@
     </article>
   </div>
 
+  <template id="emptyPersonalTemplate">
+    <div class="empty-state">
+      <strong>No sets selected yet.</strong>
+      <span>Tap a set to add it to your timetable.</span>
+    </div>
+  </template>
+
   <script>
     window.TIMETABLE_CONFIG = {
-      id: "hardstyle-home",
-      name: "Hardstyle Timetable App",
-      edition: "Festivals",
-      dates: "",
-      sourceFile: "",
-      storagePrefix: "hardstyle-home",
+      id: "vwab",
+      name: "VWAB",
+      edition: "The Classics Cup",
+      dates: "11 July 2026",
+      sourceFile: "timetable.csv?v=2",
+      storagePrefix: "vwab",
       assetBase: "",
-      heroCompactTitle: "HARDSTYLE TIMETABLE APP",
-      tagline: "Choose a festival and build your personal timetable.",
-      disclaimer: "Unofficial fan-made project. Festival pages are not affiliated with or endorsed by their organizers.",
-      defaultHost: "Hardstyle Timetable App",
-      privacyLabel: "Hardstyle Timetable App",
-      syncLabel: "Hardstyle Timetable sync"
+      heroCompactTitle: "VWAB - TIMETABLE",
+      tagline: "Tap sets you want to see and use the star to mark the ones you definitely do not want to miss.",
+      disclaimer: "Unofficial fan-made project. Not affiliated with or endorsed by VWAB or its organizers.",
+      defaultHost: "VWAB",
+      privacyLabel: "VWAB Timetable",
+      syncLabel: "VWAB sync"
     };
   </script>
-  <script src="app.js?v=109"></script>
+  <script src="../../app.js?v=109"></script>
 </body>
 </html>
+
