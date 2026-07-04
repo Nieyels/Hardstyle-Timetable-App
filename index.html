@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=103">
+  <link rel="stylesheet" href="styles.css?v=106">
 </head>
 <body>
   <div class="app-shell home-shell">
@@ -46,11 +46,26 @@
     </header>
 
     <main>
+      <section class="next-festival" aria-labelledby="nextFestivalTitle" hidden>
+        <p class="home-eyebrow">Next festival</p>
+        <a id="nextFestivalCard" class="next-festival-card" href="#">
+          <span id="nextFestivalStatus" class="festival-card__status">Next up</span>
+          <div class="next-festival-card__body">
+            <h2 id="nextFestivalTitle">Next festival</h2>
+            <div class="next-festival-card__meta">
+              <span id="nextFestivalTheme"></span>
+              <span id="nextFestivalLocation"></span>
+              <span id="nextFestivalDate"></span>
+            </div>
+          </div>
+        </a>
+      </section>
+
       <section class="home-intro" aria-labelledby="festivalListTitle">
         <p class="home-eyebrow">All timetables</p>
         <h2 id="festivalListTitle">Choose your festival</h2>
         <div class="festival-grid">
-          <article class="festival-card" style="--festival-banner: url('festivals/supremacy/banner.jpg')">
+          <article class="festival-card" data-festival-date="2026-09-26" style="--festival-banner: url('festivals/supremacy/banner.jpg')">
             <a class="festival-card__link" href="festivals/supremacy/">
               <span class="festival-card__status">Line-up available</span>
               <strong>Supremacy</strong>
@@ -59,7 +74,7 @@
               <span class="festival-card__meta">26 September 2026</span>
             </a>
           </article>
-          <article class="festival-card" style="--festival-banner: url('festivals/decibel-outdoor/banner.jpg')">
+          <article class="festival-card" data-festival-date="2026-08-30" style="--festival-banner: url('festivals/decibel-outdoor/banner.jpg')">
             <a class="festival-card__link" href="festivals/decibel-outdoor/">
               <span class="festival-card__status">Line-up available</span>
               <strong>Decibel Outdoor</strong>
@@ -68,7 +83,7 @@
               <span class="festival-card__meta">28 - 30 August 2026</span>
             </a>
           </article>
-          <article class="festival-card" style="--festival-banner: url('festivals/dominator/banner.jpg')">
+          <article class="festival-card" data-festival-date="2026-07-18" style="--festival-banner: url('festivals/dominator/banner.jpg')">
             <a class="festival-card__link" href="festivals/dominator/">
               <span class="festival-card__status">Timetable available</span>
               <strong>Dominator</strong>
@@ -77,7 +92,7 @@
               <span class="festival-card__meta">17 - 18 July 2026</span>
             </a>
           </article>
-          <article class="festival-card" style="--festival-banner: url('festivals/vwab/banner.jpg')">
+          <article class="festival-card" data-festival-date="2026-07-11" style="--festival-banner: url('festivals/vwab/banner.jpg')">
             <a class="festival-card__link" href="festivals/vwab/">
               <span class="festival-card__status">Timetable available</span>
               <strong>VWAB</strong>
@@ -86,7 +101,7 @@
               <span class="festival-card__meta">11 July 2026</span>
             </a>
           </article>
-          <article class="festival-card" style="--festival-banner: url('festivals/defqon-1/banner.jpg')">
+          <article class="festival-card" data-festival-date="2026-06-28" style="--festival-banner: url('festivals/defqon-1/banner.jpg')">
             <a class="festival-card__link" href="festivals/defqon-1/">
               <span class="festival-card__status">Cancelled</span>
               <strong>Defqon.1</strong>
@@ -95,7 +110,7 @@
               <span class="festival-card__meta">25 - 28 June 2026</span>
             </a>
           </article>
-          <article class="festival-card" style="--festival-banner: url('festivals/intents-festival/banner.jpg')">
+          <article class="festival-card" data-festival-date="2026-06-07" style="--festival-banner: url('festivals/intents-festival/banner.jpg')">
             <a class="festival-card__link" href="festivals/intents-festival/">
               <span class="festival-card__status">Past edition</span>
               <strong>Intents Festival</strong>
@@ -273,6 +288,6 @@
       syncLabel: "Hardstyle Timetable sync"
     };
   </script>
-  <script src="app.js?v=109"></script>
+  <script src="app.js?v=111"></script>
 </body>
 </html>

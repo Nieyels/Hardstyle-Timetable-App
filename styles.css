@@ -331,6 +331,75 @@ body.is-header-compact .controls {
   display: none;
 }
 
+.next-festival {
+  display: grid;
+  gap: 8px;
+  padding: 18px 0 10px;
+}
+
+.next-festival[hidden] {
+  display: none;
+}
+
+.next-festival-card {
+  position: relative;
+  min-height: 340px;
+  display: grid;
+  align-content: end;
+  gap: 18px;
+  padding: 28px;
+  color: var(--text-main);
+  text-decoration: none;
+  border: 1px solid #302820;
+  border-top: 3px solid var(--blood-red);
+  border-bottom: 3px solid var(--gold);
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.78) 36%, rgba(0, 0, 0, 0.22) 74%, rgba(0, 0, 0, 0.08) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.08)),
+    var(--festival-banner, none) center / cover no-repeat,
+    #121212;
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.42);
+  animation: homeCardEnter 420ms ease both;
+}
+
+.next-festival-card > .festival-card__status {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+}
+
+.next-festival-card:hover,
+.next-festival-card:focus-visible {
+  transform: translateY(-2px);
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(197, 160, 89, 0.22), 0 24px 58px rgba(0, 0, 0, 0.48);
+}
+
+.next-festival-card__body {
+  max-width: min(640px, 66%);
+  display: grid;
+  gap: 10px;
+}
+
+.next-festival-card h2 {
+  margin: 0;
+  color: #fff;
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.78);
+}
+
+.next-festival-card__meta {
+  display: grid;
+  gap: 5px;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 600;
+  line-height: 1.35;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.78);
+}
+
 .home-intro {
   display: grid;
   gap: 6px;
@@ -416,6 +485,10 @@ body.is-header-compact .controls {
 
 .home-shell .festival-card:nth-child(5) {
   animation-delay: 350ms;
+}
+
+.home-shell .festival-card:nth-child(6) {
+  animation-delay: 410ms;
 }
 
 .festival-card__link {
@@ -511,6 +584,7 @@ body.is-header-compact .controls {
 @media (prefers-reduced-motion: reduce) {
   .home-shell .home-intro > .home-eyebrow,
   .home-shell .home-intro > h2,
+  .next-festival-card,
   .home-shell .festival-card {
     animation: none;
   }
@@ -2243,6 +2317,25 @@ input[type="search"]:focus-visible {
 }
 
 @media (max-width: 680px) {
+  .next-festival-card {
+    min-height: 300px;
+    padding: 20px;
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.82) 48%, rgba(0, 0, 0, 0.30) 100%),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.12)),
+      var(--festival-banner, none) center / cover no-repeat,
+      #121212;
+  }
+
+  .next-festival-card > .festival-card__status {
+    top: 18px;
+    left: 20px;
+  }
+
+  .next-festival-card__body {
+    max-width: min(360px, 82%);
+  }
+
   .festival-grid {
     grid-template-columns: 1fr;
   }

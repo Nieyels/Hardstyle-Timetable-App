@@ -155,6 +155,8 @@ async function init() {
   bindCommonControlsOnce();
 
   if (!isTimetablePage()) {
+    const festivalCards = sortHomeFestivalCards();
+    renderNextFestival(festivalCards);
     initSupabaseSync();
     return;
   }
@@ -216,6 +218,57 @@ function bindTimetableControlsOnce() {
   bindControls();
   bindResponsiveLayout();
   state.controlsBound = true;
+}
+
+function sortHomeFestivalCards() {
+  const grid = document.querySelector(".festival-grid");
+  if (!grid) return [];
+
+  const sortedCards = [...grid.querySelectorAll(".festival-card")]
+    .sort((a, b) => {
+      const dateA = parseFestivalDate(a.dataset.festivalDate);
+      const dateB = parseFestivalDate(b.dataset.festivalDate);
+      return (Number.isNaN(dateB) ? 0 : dateB) - (Number.isNaN(dateA) ? 0 : dateA);
+    });
+
+  sortedCards.forEach((card) => grid.appendChild(card));
+  return sortedCards;
+}
+
+function renderNextFestival(cards) {
+  const section = document.querySelector(".next-festival");
+  const target = document.getElementById("nextFestivalCard");
+  if (!section || !target || !cards.length) return;
+
+  const today = new Date();
+  const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime();
+  const nextCard = [...cards]
+    .filter((card) => {
+      const date = parseFestivalDate(card.dataset.festivalDate);
+      return !Number.isNaN(date) && date >= todayStart;
+    })
+    .sort((a, b) => parseFestivalDate(a.dataset.festivalDate) - parseFestivalDate(b.dataset.festivalDate))[0] || cards[0];
+
+  const link = nextCard.querySelector(".festival-card__link");
+  const title = nextCard.querySelector("strong")?.textContent || "Next festival";
+  const status = nextCard.querySelector(".festival-card__status")?.textContent || "Next up";
+  const meta = [...nextCard.querySelectorAll(".festival-card__meta")].map((node) => node.textContent || "");
+
+  target.href = link?.getAttribute("href") || "#";
+  target.style.setProperty("--festival-banner", nextCard.style.getPropertyValue("--festival-banner"));
+  document.getElementById("nextFestivalStatus").textContent = status;
+  document.getElementById("nextFestivalTitle").textContent = title;
+  document.getElementById("nextFestivalTheme").textContent = meta[0] || "";
+  document.getElementById("nextFestivalLocation").textContent = meta[1] || "";
+  document.getElementById("nextFestivalDate").textContent = meta[2] || "";
+  section.hidden = false;
+}
+
+function parseFestivalDate(value) {
+  const match = String(value || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return NaN;
+
+  return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3])).getTime();
 }
 
 function isTimetablePage() {
